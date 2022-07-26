@@ -108,13 +108,6 @@ app.get("/area", (req, res) => {
 // Send all cities
 app.get("/all-cities", (req, res) => {
   res.writeHead(200, { 'Content-Type': 'application/json' });
-
-  res.write("[")
-  for (var i = 0; i < addresses.length - 1; i++) {
-    res.write(JSON.stringify(addresses[i]) + ",");
-  }
-  res.write(JSON.stringify(addresses[addresses.length-i]));
-  res.write("]")
-
+  res.write(JSON.stringify(addresses));
   res.end();
 });
